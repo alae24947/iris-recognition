@@ -1,20 +1,27 @@
 # iris-recognition
+# 🏦 Iris Bank Microservices Pipeline
 
+A microservices-based banking system integrating authentication, banking operations, AI iris recognition, notifications, and a web UI using Docker-based infrastructure.
+
+---
+
+## 📁 Project Structure
+
+```bash
 iris_bank_Microservices_Pipeline/
 │
-├── README.md                        
-├── REPORT.pdf                       
-├── .gitignore                       
-├── docker-compose.yml               
-├── docker-compose.prod.yml          
+├── README.md
+├── REPORT.pdf
+├── .gitignore
+├── docker-compose.yml
+├── docker-compose.prod.yml
 │
-├── services/                        
-│   │
-│   ├── auth-service/                
+├── services/
+│   ├── auth-service/
 │   │   ├── Dockerfile
 │   │   ├── requirements.txt
 │   │   ├── src/
-│   │   │   ├── main.py              
+│   │   │   ├── main.py
 │   │   │   ├── routes/
 │   │   │   │   ├── login.py
 │   │   │   │   └── register.py
@@ -25,44 +32,44 @@ iris_bank_Microservices_Pipeline/
 │   │   │   └── config.py
 │   │   └── tests/
 │   │
-│   ├── banking-service/             
+│   ├── banking-service/
 │   │   ├── Dockerfile
 │   │   ├── requirements.txt
 │   │   ├── manage.py
-│   │   ├── core/                    
-│   │   │   ├── models.py            
-│   │   │   ├── views.py             
+│   │   ├── core/
+│   │   │   ├── models.py
+│   │   │   ├── views.py
 │   │   │   ├── serializers.py
 │   │   │   └── urls.py
-│   │   ├── iris_bank_settings/      
+│   │   ├── iris_bank_settings/
 │   │   └── tests/
 │   │
-│   ├── iris-ml-service/             
-│   │   ├── Dockerfile
-│   │   ├── requirements.txt         
-│   │   ├── src/
-│   │   │   ├── main.py              
-│   │   │   ├── model_loader.py      
-│   │   │   ├── inference.py         
-│   │   │   └── utils.py
-│   │   ├── models/
-│   │   │   └── best_siamese.pth     
-│   │   └── tests/
-│   │
-│   ├── notification-worker/         
+│   ├── iris-ml-service/
 │   │   ├── Dockerfile
 │   │   ├── requirements.txt
 │   │   ├── src/
-│   │   │   ├── worker.py            
+│   │   │   ├── main.py
+│   │   │   ├── model_loader.py
+│   │   │   ├── inference.py
+│   │   │   └── utils.py
+│   │   ├── models/
+│   │   │   └── best_siamese.pth
+│   │   └── tests/
+│   │
+│   ├── notification-worker/
+│   │   ├── Dockerfile
+│   │   ├── requirements.txt
+│   │   ├── src/
+│   │   │   ├── worker.py
 │   │   │   ├── tasks/
 │   │   │   │   ├── send_email.py
 │   │   │   │   └── log_transaction.py
 │   │   │   └── config.py
 │   │   └── tests/
 │   │
-│   └── web-ui/                      
+│   └── web-ui/
 │       ├── Dockerfile
-│       ├── package.json             
+│       ├── package.json
 │       ├── src/
 │       │   ├── components/
 │       │   ├── pages/
@@ -70,44 +77,41 @@ iris_bank_Microservices_Pipeline/
 │       │   │   ├── Dashboard.js
 │       │   │   └── Transfer.js
 │       │   ├── services/
-│       │   │   └── api.js           
+│       │   │   └── api.js
 │       │   └── App.js
 │       └── public/
 │
-├── infrastructure/                  
-│   │
-│   ├── consul/                      
+├── infrastructure/
+│   ├── consul/
 │   │   ├── Dockerfile
 │   │   ├── config/
-│   │   │   └── consul.hcl           
-│   │   └── data/                    
+│   │   │   └── consul.hcl
+│   │   └── data/
 │   │
-│   ├── rabbitmq/                    
-│   │   ├── Dockerfile               
+│   ├── rabbitmq/
+│   │   ├── Dockerfile
 │   │   ├── config/
 │   │   │   └── rabbitmq.conf
 │   │   └── management_plugin/
 │   │
-│   └── traefik/                     
+│   └── traefik/
 │       ├── Dockerfile
 │       ├── dynamic/
-│       │   └── file_config.yml      
+│       │   └── file_config.yml
 │       └── static/
-│           └── traefik.yml          
+│           └── traefik.yml
 │
-├── scripts/                         
-│   │
+├── scripts/
 │   ├── deploy/
-│   │   ├── deploy_server_1.sh       
-│   │   ├── deploy_server_2.sh       
-│   │   ├── deploy_server_3.sh       
-│   │   └── init_cluster.sh          
-│   │
-│   ├── build_all.sh                 
-│   └── seed_data.py                 
+│   │   ├── deploy_server_1.sh
+│   │   ├── deploy_server_2.sh
+│   │   ├── deploy_server_3.sh
+│   │   └── init_cluster.sh
+│   ├── build_all.sh
+│   └── seed_data.py
 │
-└── docs/                            
+└── docs/
     ├── architecture_diagram.png
-    ├── api_swagger.json             
-    ├── deployment_guide.md          
+    ├── api_swagger.json
+    ├── deployment_guide.md
     └── user_manual.md
