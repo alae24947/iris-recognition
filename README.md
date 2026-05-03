@@ -1,4 +1,4 @@
-# 👁️ Iris Biometric Authentication — Siamese ResNet18
+# Iris Biometric Authentication — Siamese ResNet18
 
  
 Biometric iris verification system using a Siamese Neural Network with a fine-tuned ResNet18 backbone. Trained on the UPOL iris dataset, achieving **95% accuracy** and **5% EER** on unseen identities — deployable as a REST microservice.
@@ -39,7 +39,7 @@ L = y · d² + (1 - y) · max(margin - d, 0)²
 - `y = 0` → different identity → push beyond margin (1.0)
 ---
  
-## 📊 Dataset
+##  Dataset
  
 | Property | Value |
 |---|---|
@@ -76,7 +76,7 @@ Pairs are **balanced**: equal positive and negative pairs per split (Train: 288 
  
 ---
  
-## 📈 Results
+##  Results
  
 ### Test Set (20 unseen identities, 120 pairs)
  
